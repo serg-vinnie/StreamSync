@@ -17,13 +17,13 @@ public struct UpStreamEvent : Codable {
 }
 
 public struct DownStreamEvent : Codable {
-    var _id             : BSONObjectID?
-    let author          : String
-    let version         : Int
-    let createdAt       : Date
-    let receivedAt      : Date
+    public var _id             : BSONObjectID?
+    public let author          : String
+    public let version         : Int
+    public let createdAt       : Date
+    public let receivedAt      : Date
     
-    let content         : Data
+    public let content         : Data
     
     
     init(author: String, content: Data, version: Int, createdAt: Date) {
