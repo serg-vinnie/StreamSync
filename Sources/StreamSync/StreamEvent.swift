@@ -25,8 +25,15 @@ public struct DownStreamEvent : Codable {
     
     public let content         : Data
     
+    public init(upStreamEvent up: UpStreamEvent) {
+        self.author = up.author
+        self.content = up.content
+        self.version = up.version
+        self.receivedAt = Date()
+        self.createdAt = up.createdAt
+    }
     
-    init(author: String, content: Data, version: Int, createdAt: Date) {
+    public init(author: String, content: Data, version: Int, createdAt: Date) {
         self.author = author
         self.content = content
         self.version = version
