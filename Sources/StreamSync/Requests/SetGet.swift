@@ -31,8 +31,8 @@ public struct GetRequest : BasicRequest {
     }
 }
 
-struct GetResponse : Codable {
-    let storageData : StorageData?
+public struct GetResponse : Codable {
+    public let storageData : StorageData?
     
     public init(storageData : StorageData?) {
         self.storageData = storageData

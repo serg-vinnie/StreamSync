@@ -17,3 +17,15 @@ public protocol StreamRequest : BasicRequest {
     var user          : String { get }
     var streamID      : String { get }
 }
+
+public struct SimpleRequest : StreamRequest {
+    public let streamID      : String
+    public let token         : String
+    public let user          : String
+    
+    public init(streamID: String, token: String, user: String) {
+        self.streamID = streamID
+        self.token = token
+        self.user = user
+    }
+}
