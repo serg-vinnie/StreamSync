@@ -22,22 +22,24 @@ public struct DownStreamEvent : Codable {
     public let version         : Int
     public let createdAt       : Date
     public let receivedAt      : Date
+    public let address         : String?
     
     public let content         : Data
     
-    public init(upStreamEvent up: UpStreamEvent) {
+    public init(upStreamEvent up: UpStreamEvent, address: String?) {
         self.author = up.author
         self.content = up.content
         self.version = up.version
         self.receivedAt = Date()
         self.createdAt = up.createdAt
+        self.address = address
     }
     
-    public init(author: String, content: Data, version: Int, createdAt: Date) {
-        self.author = author
-        self.content = content
-        self.version = version
-        self.receivedAt = Date()
-        self.createdAt = createdAt
-    }
+//    public init(author: String, content: Data, version: Int, createdAt: Date) {
+//        self.author = author
+//        self.content = content
+//        self.version = version
+//        self.receivedAt = Date()
+//        self.createdAt = createdAt
+//    }
 }
