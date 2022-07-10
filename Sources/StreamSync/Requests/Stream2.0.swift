@@ -64,14 +64,14 @@ public struct StreamEvent : Codable {
     
     public let content         : Data
     
-    public init(upStreamEvent up: PushEvent, address: String?) {
-        self._id = up.id
-        self.author = up.author
-        self.content = up.content
-        self.version = up.version
+    public init(pushEvent event: PushEvent, address: String?) {
+        self._id        = event.id
+        self.author     = event.author
+        self.content    = event.content
+        self.version    = event.version
         self.receivedAt = Date()
-        self.createdAt = up.createdAt
-        self.address = address
+        self.createdAt  = event.createdAt
+        self.address    = address
     }
     
 //    public init(author: String, content: Data, version: Int, createdAt: Date) {
