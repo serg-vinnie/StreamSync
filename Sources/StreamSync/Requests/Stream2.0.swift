@@ -37,6 +37,19 @@ public struct Push {
     }
 }
 
+public struct Pull {
+    public struct Request : StreamRequest {
+        public let token         : String
+        public let user          : String
+        public let streamID      : String
+        
+        public let start : Date
+        public let end   : Date
+    }
+    
+    // Response [StreamEvent] of non existing ids
+}
+
 public struct PushEvent : Codable {
     public var id             : String
     public let author          : String
