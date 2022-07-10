@@ -25,7 +25,7 @@ public struct Push {
         public let user          : String
         public let streamID      : String
         
-        public let IDs          : [PushEvent]
+        public let events        : [PushEvent]
     }
     
     public struct Response : Codable {
