@@ -7,14 +7,34 @@
 
 import Foundation
 
-public struct CheckIDsRequest : StreamRequest {
-    public let token         : String
-    public let user          : String
-    public let streamID      : String
+public struct CheckIDs {
+    struct Request : StreamRequest {
+        public let token         : String
+        public let user          : String
+        public let streamID      : String
     
-    public let IDs          : [String]
+        public let IDs          : [String]
+    }
     
     // Response [String] of non existing ids
+}
+
+public struct Push {
+    struct Request : StreamRequest {
+        public let token         : String
+        public let user          : String
+        public let streamID      : String
+        
+        public let IDs          : [PushEvent]
+    }
+    
+    public struct Response : Codable {
+        public let inserted : Int
+        
+        public init(inserted : Int) {
+            self.inserted = inserted
+        }
+    }
 }
 
 public struct PushEvent : Codable {
