@@ -20,7 +20,7 @@ public struct CheckIDs {
 }
 
 public struct Push {
-    struct Request : StreamRequest {
+    public struct Request : StreamRequest {
         public let token         : String
         public let user          : String
         public let streamID      : String
