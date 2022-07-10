@@ -24,6 +24,7 @@ public struct Push {
         public let token         : String
         public let user          : String
         public let streamID      : String
+        public let safe          : Bool
         
         public let events        : [PushEvent]
     }
