@@ -8,7 +8,7 @@
 import Foundation
 
 public struct CheckIDs {
-    struct Request : StreamRequest {
+    public struct Request : StreamRequest {
         public let token         : String
         public let user          : String
         public let streamID      : String
