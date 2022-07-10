@@ -17,7 +17,7 @@ public struct CheckIDsRequest : StreamRequest {
     // Response [String] of non existing ids
 }
 
-public struct UpStreamEvent : Codable {
+public struct PushEvent : Codable {
     public var id             : String
     public let author          : String
     public let version         : Int
@@ -44,8 +44,8 @@ public struct StreamEvent : Codable {
     
     public let content         : Data
     
-    public init(upStreamEvent up: UpStreamEvent2, address: String?) {
-        self._id = up._id
+    public init(upStreamEvent up: PushEvent, address: String?) {
+        self._id = up.id
         self.author = up.author
         self.content = up.content
         self.version = up.version
