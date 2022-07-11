@@ -14,6 +14,13 @@ public struct CheckIDs {
         public let streamID      : String
     
         public let IDs          : [String]
+        
+        public init(token: String, user: String, streamID: String, IDs: [String]) {
+            self.token      = token
+            self.user       = user
+            self.streamID   = streamID
+            self.IDs        = IDs
+        }
     }
     
     // Response [String] of non existing ids
@@ -27,6 +34,14 @@ public struct Push {
         public let safe          : Bool
         
         public let events        : [PushEvent]
+        
+        public init(token: String, user: String, streamID: String, safe: Bool, events: [PushEvent]) {
+            self.token      = token
+            self.user       = user
+            self.streamID   = streamID
+            self.safe       = safe
+            self.events     = events
+        }
     }
     
     public struct Response : Codable {
@@ -46,6 +61,14 @@ public struct Pull {
         
         public let start : Date
         public let end   : Date
+        
+        public init(token: String, user: String, streamID: String, start: Date, end: Date) {
+            self.token      = token
+            self.user       = user
+            self.streamID   = streamID
+            self.start      = start
+            self.end        = end
+        }
     }
     
     // Response [StreamEvent] of non existing ids
