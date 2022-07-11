@@ -54,6 +54,11 @@ public struct Push {
 }
 
 public struct Pull {
+    public enum TimeField : String, Codable {
+        case createdAt
+        case receivedAt
+    }
+    
     public struct Request : StreamRequest {
         public let token         : String
         public let user          : String
@@ -61,13 +66,15 @@ public struct Pull {
         
         public let start : Date
         public let end   : Date
+        public let field : TimeField
         
-        public init(token: String, user: String, streamID: String, start: Date, end: Date) {
+        public init(token: String, user: String, streamID: String, start: Date, end: Date, field: TimeField) {
             self.token      = token
             self.user       = user
             self.streamID   = streamID
             self.start      = start
             self.end        = end
+            self.field      = field
         }
     }
     
